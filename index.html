@@ -1,0 +1,22 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>JKSTORY AI 전산센터 Office</title><link rel="stylesheet" href="/app.css"></head><body>
+<div id="login" class="login"><form id="loginForm" class="loginCard"><div class="logo">🏢</div><h1>JKSTORY AI 전산센터</h1><p>Office 로그인</p><small style="color:#91a2bf">설치 없이 웹에서 바로 사용하는 JKSTORY 전산센터</small><input id="username" placeholder="사용자명" autocomplete="username"><input id="password" type="password" placeholder="비밀번호" autocomplete="current-password"><div id="loginError" class="error"></div><button>로그인</button></form></div>
+<div id="app" class="app hidden">
+<aside><div class="brand">JKSTORY AI 전산센터</div><div class="sub">Office Control Center</div><nav>
+<button data-tab="center" class="active">🏢 센터장실</button><button data-tab="projects">📁 프로젝트룸</button><button data-tab="dev">🧩 개발상황실</button><button data-tab="deploy">🚀 배포관제실</button><button data-tab="qa">🛡 QA·보안실</button><button data-tab="docs">📚 문서보관실</button>
+</nav><div id="sideStatus" class="sideStatus"></div></aside>
+<main>
+<section id="center" class="tab active">
+<header><div><h1>센터장실</h1><p>CEO 지시 · AI 대화 · 프로젝트 · Cloud Browser 통합관제</p></div><div class="actions"><span id="userPill" class="pill"></span><button id="refreshAll">전체 새로고침</button><button id="logout">로그아웃</button></div></header>
+<div id="banner"></div>
+<div class="workspace">
+<div class="officeCol"><div class="kpis"><div class="card"><small>운영 프로젝트</small><strong>1</strong><span>정산서 작성 프로그램</span></div><div class="card"><small>진행 작업</small><strong id="taskCount">0</strong><span>영속 작업목록</span></div><div class="card"><small>GitHub</small><strong id="ghState">—</strong><span id="ghFoot">연동 대기</span></div><div class="card"><small>Vercel</small><strong id="vcState">—</strong><span id="vcFoot">연동 대기</span></div></div>
+<div class="panel"><h2>정산서 작성 프로그램</h2><div class="row"><span>현재 단계</span><b>GitHub / Vercel 이전</b></div><div class="row"><span>QA</span><b>미검증</b></div><button id="openLatest" class="wide">최신 Vercel 배포 열기</button></div></div>
+<div class="ai"><div class="sectionHead"><h2>🧠 AI 전산센터 대화</h2><span id="aiState" class="dot"></span></div><div id="context" class="context"></div><div id="messages" class="messages"></div><div class="composer"><textarea id="aiInput" placeholder="예: 최신 Preview 화면을 확인하고 모바일 UI 문제를 정리해"></textarea><div class="actions"><button id="sendAi">AI에 지시</button><button id="registerTask">작업으로 등록</button></div></div></div>
+<div class="browser"><div class="browserBar"><button id="reloadFrame">↻</button><input id="browserUrl" placeholder="Vercel Preview 또는 개발 URL"><button id="loadFrame">열기</button></div><div class="viewport"><button data-view="desktop">PC</button><button data-view="tablet">태블릿</button><button data-view="mobile">모바일</button><button id="newWindow">새 창 ↗</button></div><div class="frameWrap"><div id="emptyFrame" class="empty">🌐<h3>Cloud Browser / Live Preview</h3><p>Vercel Preview 또는 개발 URL을 입력하세요.</p></div><iframe id="frame" class="hidden" sandbox="allow-forms allow-modals allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts" referrerpolicy="no-referrer"></iframe></div></div>
+</div></section>
+<section id="projects" class="tab"><header><h1>프로젝트룸</h1></header><div class="panel tableWrap"><table><thead><tr><th>ID</th><th>작업</th><th>부서</th><th>상태</th><th>우선순위</th><th>변경</th></tr></thead><tbody id="taskRows"></tbody></table></div></section>
+<section id="dev" class="tab"><header><h1>개발상황실</h1></header><div class="panel"><button id="refreshGh">GitHub 새로고침</button><div id="ghContent"></div></div></section>
+<section id="deploy" class="tab"><header><h1>배포관제실</h1></header><div class="panel"><button id="refreshVc">Vercel 새로고침</button><div id="vcContent"></div></div></section>
+<section id="qa" class="tab"><header><h1>QA·보안실</h1></header><div id="qaContent" class="panel"></div></section>
+<section id="docs" class="tab"><header><h1>문서보관실</h1></header><div class="panel"><div class="actions"><a class="button" href="/api/backup">운영 백업 내보내기</a><button id="refreshAudit">감사로그 새로고침</button></div><div id="auditContent"></div></div></section>
+</main></div><script src="/app.js"></script></body></html>

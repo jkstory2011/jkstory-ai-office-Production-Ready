@@ -1,0 +1,10 @@
+node_modules
+.env
+.env.local
+.vercel
+data/office-data.json
+.DS_Store
+
+.env.local.cmd
+
+.office-local.json
