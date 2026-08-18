@@ -1,6 +1,3 @@
-import { backupApi } from "../lib/web-handlers.js";
-import { adaptNodeToWeb } from "../lib/node-adapter.js";
+import { backupApi } from "../lib/handlers.js";
 
-export default async function handler(req, res) {
-  return adaptNodeToWeb(req, res, backupApi);
-}
+export default backupApi;

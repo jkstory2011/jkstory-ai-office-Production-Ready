@@ -1,6 +1,3 @@
-import { me } from "../lib/web-handlers.js";
-import { adaptNodeToWeb } from "../lib/node-adapter.js";
+import { me } from "../lib/handlers.js";
 
-export default async function handler(req, res) {
-  return adaptNodeToWeb(req, res, me);
-}
+export default me;

@@ -1,6 +1,3 @@
-import { chatApi } from "../lib/web-handlers.js";
-import { adaptNodeToWeb } from "../lib/node-adapter.js";
+import { chatApi } from "../lib/handlers.js";
 
-export default async function handler(req, res) {
-  return adaptNodeToWeb(req, res, chatApi);
-}
+export default chatApi;
