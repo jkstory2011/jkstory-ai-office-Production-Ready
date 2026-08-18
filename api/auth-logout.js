@@ -1,7 +1,6 @@
 import { logout } from "../lib/web-handlers.js";
+import { adaptNodeToWeb } from "../lib/node-adapter.js";
 
-export default {
-  async fetch(request) {
-    return logout(request);
-  }
-};
+export default async function handler(req, res) {
+  return adaptNodeToWeb(req, res, logout);
+}
