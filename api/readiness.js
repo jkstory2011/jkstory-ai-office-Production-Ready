@@ -1,2 +1,7 @@
 import { readinessApi } from "../lib/web-handlers.js";
-export default readinessApi;
+
+export default {
+  async fetch(request) {
+    return readinessApi(request);
+  }
+};

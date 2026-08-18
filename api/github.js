@@ -1,2 +1,7 @@
 import { githubApi } from "../lib/web-handlers.js";
-export default githubApi;
+
+export default {
+  async fetch(request) {
+    return githubApi(request);
+  }
+};
