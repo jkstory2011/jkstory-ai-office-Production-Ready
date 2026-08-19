@@ -1,0 +1,14 @@
+JKSTORY AI 전산센터 - 무료 AI 모드
+
+Vercel Environment Variables에 아래만 추가하면 됩니다.
+
+GEMINI_API_KEY=<Google AI Studio에서 생성한 키>
+GEMINI_MODEL=gemini-3-flash-preview
+ENABLE_AI_CHAT=true
+
+Gemini 키가 있으면 Gemini를 우선 사용합니다.
+OPENAI_API_KEY가 남아 있어도 Gemini가 먼저 호출됩니다.
+
+주의:
+Gemini 무료 티어의 데이터 처리/보존 정책은 유료 티어와 다를 수 있으므로
+정산 원본, 개인정보, 비밀키 등 민감정보를 AI 대화에 직접 입력하지 마세요.
